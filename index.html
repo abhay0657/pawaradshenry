@@ -1,170 +1,462 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="viewport"
+content="width=device-width, initial-scale=1.0">
+
 <title>Traders Paradise</title>
 
-<!-- Google Font -->
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;800&display=swap" rel="stylesheet">
 
 <style>
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: 'Poppins', sans-serif;
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Poppins',sans-serif;
 }
 
-body {
-    background: #000;
-    color: #fff;
-    text-align: center;
+body{
+
+background:#05070c;
+color:white;
+overflow-x:hidden;
+
 }
 
-/* Header */
-.header {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 10px;
-    padding: 20px;
+
+/* Background */
+
+body::before{
+
+content:"";
+position:fixed;
+width:100%;
+height:100%;
+
+background:
+
+radial-gradient(circle at top,
+rgba(0,255,120,0.15),
+transparent),
+
+linear-gradient(to bottom,
+#000,
+#071018);
+
+z-index:-1;
+
 }
 
-.header img {
-    width: 40px;
+
+/* Container */
+
+.container{
+
+max-width:1100px;
+margin:auto;
+padding:25px;
+
 }
 
-.header h2 {
-    font-size: 22px;
-    font-weight: 600;
+
+/* Hero */
+
+.hero{
+
+text-align:center;
+padding:60px 20px;
+
 }
 
-/* Main Title */
-.main-title {
-    margin-top: 20px;
+
+/* Profile */
+
+.profile{
+
+width:220px;
+border-radius:25px;
+box-shadow:0 0 50px #00ff88;
+border:4px solid #00ff88;
+
+animation:float 3s ease-in-out infinite;
+
 }
 
-.main-title h1 {
-    font-size: 36px;
-    color: #f5b041;
-    line-height: 1.4;
+
+@keyframes float{
+
+50%{
+
+transform:translateY(-10px);
+
 }
 
-/* Card */
-.card {
-    background: #111;
-    margin: 29px auto;
-    padding: 30px 20px;
-    width: 90%;
-    max-width: 400px;
-    border-radius: 20px;
-    box-shadow: 0 0 20px rgba(255, 165, 0, 0.2);
 }
 
-.card h2 {
-    color: #f5b041;
-    font-size: 26px;
-    margin-bottom: 10px;
+
+/* Logo */
+
+.logo{
+
+width:160px;
+margin-top:30px;
+
 }
 
-.card p {
-    color: #aaa;
-    margin-bottom: 20px;
+
+/* Heading */
+
+h1{
+
+font-size:48px;
+margin-top:25px;
+font-weight:800;
+
 }
 
-.features {
-    text-align: left;
-    margin-top: 10px;
+
+h1 span{
+
+color:#00ff88;
+
 }
 
-.features li {
-    list-style: none;
-    margin: 10px 0;
-    font-size: 16px;
+
+.sub{
+
+margin-top:15px;
+font-size:20px;
+color:#ccc;
+
 }
 
-.features li span {
-    color: #f5b041;
-    font-weight: bold;
+
+/* Cards */
+
+.card{
+
+background:rgba(255,255,255,0.06);
+
+backdrop-filter:blur(15px);
+
+padding:35px;
+margin-top:30px;
+
+border-radius:25px;
+
+border:1px solid rgba(255,255,255,.1);
+
+box-shadow:
+0 0 25px rgba(0,255,100,.15);
+
 }
+
+
+.card h2{
+
+color:#00ff88;
+margin-bottom:20px;
+
+}
+
+
+ul{
+
+list-style:none;
+
+}
+
+
+li{
+
+padding:12px;
+font-size:18px;
+
+}
+
+
+/* Stats */
+
+.stats{
+
+display:flex;
+justify-content:center;
+gap:20px;
+flex-wrap:wrap;
+margin-top:30px;
+
+}
+
+
+.stat{
+
+padding:25px;
+min-width:200px;
+border-radius:20px;
+
+background:#10161f;
+
+box-shadow:
+0 0 25px rgba(0,255,150,.15);
+
+}
+
+
+.stat h3{
+
+font-size:30px;
+color:#00ff88;
+
+}
+
 
 /* Button */
-.btn {
-    display: block;
-    width: 90%;
-    max-width: 400px;
-    margin: 20px auto;
-    padding: 18px;
-    background: linear-gradient(135deg, #1e90ff, #007bff);
-    color: #fff;
-    font-size: 20px;
-    font-weight: 600;
-    border-radius: 15px;
-    text-decoration: none;
-    box-shadow: 0 5px 15px rgba(0, 123, 255, 0.5);
-    transition: 0.3s;
+
+.btn{
+
+display:inline-block;
+
+margin-top:40px;
+
+padding:22px 45px;
+
+font-size:22px;
+
+font-weight:bold;
+
+border-radius:50px;
+
+text-decoration:none;
+
+color:white;
+
+background:
+
+linear-gradient(
+45deg,
+#00ff88,
+#00c853);
+
+box-shadow:
+0 0 40px #00ff88;
+
+transition:.3s;
+
 }
 
-.btn:hover {
-    transform: scale(1.05);
+
+.btn:hover{
+
+transform:scale(1.08);
+
 }
 
-.btn small {
-    display: block;
-    font-size: 14px;
-    opacity: 0.8;
+
+/* Footer */
+
+.footer{
+
+margin-top:50px;
+padding-bottom:40px;
+text-align:center;
+color:#aaa;
+
 }
+
+
+/* Responsive */
+
+@media(max-width:768px){
+
+h1{
+
+font-size:34px;
+
+}
+
+.sub{
+
+font-size:17px;
+
+}
+
+.profile{
+
+width:180px;
+
+}
+
+}
+
+
 </style>
-<!-- Meta Pixel Code -->
-<script>
-!function(f,b,e,v,n,t,s)
-{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-n.callMethod.apply(n,arguments):n.queue.push(arguments)};
-if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
-n.queue=[];t=b.createElement(e);t.async=!0;
-t.src=v;s=b.getElementsByTagName(e)[0];
-s.parentNode.insertBefore(t,s)}(window, document,'script',
-'https://connect.facebook.net/en_US/fbevents.js');
-fbq('init', '1751527002505171');
-fbq('track', 'PageView');
-</script>
-<noscript><img height="1" width="1" style="display:none"
-src="https://www.facebook.com/tr?id=897685276065131&ev=PageView&noscript=1"
-/></noscript>
-<!-- End Meta Pixel Code --></head>
-
+</head>
 <body>
 
-<!-- Header -->
-<div class="header">
-    <img src="https://cdn-icons-png.flaticon.com/512/3135/3135715.png" alt="logo">
-    <h2>Traders Paradise 💰</h2>
-</div>
 
-<!-- Title -->
-<div class="main-title">
-    <h1>Welcome To<br>Traders Paradise</h1>
-</div>
+<div class="container">
 
-<!-- Card -->
-<div class="card">
-    <h2>VIP SIGNALS</h2>
-    <p>Exclusive trading signals with High accuracy</p>
+<div class="hero">
 
-    <ul class="features">
-        <li><span>1.</span> Real Market Analysis</li>
-        <li><span>2.</span> Entry/Exit Points</li>
-        <li><span>3.</span> Risk management</li>
-        <li><span>4.</span> 24/7 Support</li>
-    </ul>
-</div>
 
-<!-- Button -->
-<a href="https://t.me/+d1qUiG_yxrs3MWRl" target="_blank" class="btn">
-    Join Free TELEGRAM
-    <small>Click Here</small>
+<!-- YOUR IMAGE -->
+
+<img src="https://i.ibb.co/gbb6rJKk/images-1.jpg"
+class="profile">
+
+
+<br>
+<h1>
+
+Abhay <span>Patil</span>
+
+</h1>
+
+
+<p class="sub">
+
+Professional Forex Trader & Mentor
+
+</p>
+
+
+<a href="https://t.me/+cKPkpYU5CEg3YmNl"
+class="btn">
+
+JOIN FREE TELEGRAM
+
 </a>
+
+
+</div>
+
+
+
+<div class="card">
+
+<h2>
+
+About Me
+
+</h2>
+
+<p>
+
+I'm Abhay Patil, a Forex Trader and Mentor. I help aspiring traders understand the Forex market through practical concepts and educational content shared in my Telegram community.
+
+</p>
+
+</div>
+
+
+
+<div class="card">
+
+<h2>
+
+What You Will Learn
+
+</h2>
+
+<ul>
+
+<li>✓ Forex Trading Basics</li>
+
+<li>✓ Price Action Trading</li>
+
+<li>✓ Risk Management</li>
+
+<li>✓ Market Structure</li>
+
+<li>✓ Trading Psychology</li>
+
+<li>✓ Entry & Exit Strategies</li>
+
+<li>✓ Live Market Analysis</li>
+
+<li>✓ Beginner To Advanced Concepts</li>
+
+</ul>
+
+</div>
+
+
+
+
+<div class="stats">
+
+<div class="stat">
+
+<h3>FREE</h3>
+<p>Learning Content</p>
+
+</div>
+
+
+<div class="stat">
+
+<h3>FOREX</h3>
+<p>Trading Education</p>
+
+</div>
+
+
+<div class="stat">
+
+<h3>24/7</h3>
+<p>Market Insights</p>
+
+</div>
+
+
+</div>
+
+
+
+<div class="card">
+
+<h2>
+
+Join The Community
+
+</h2>
+
+<p>
+
+Become a part of the Booming Bulls Academy Telegram community and start learning Forex Trading with structured educational content, market insights, and practical trading knowledge.
+
+</p>
+
+
+<center>
+
+<a href="https://t.me/+cKPkpYU5CEg3YmNl"
+class="btn">
+
+JOIN TELEGRAM NOW
+
+</a>
+
+</center>
+
+</div>
+
+
+
+<div class="footer">
+
+© 2026 Traders Paradise Academy<br>
+
+Learn. Trade. Grow.
+
+</div>
+
+
+</div>
 
 </body>
 </html>
